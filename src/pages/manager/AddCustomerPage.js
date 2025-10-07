@@ -53,28 +53,15 @@ export class AddCustomerPage {
     await expect(this.tableRows.last()).toContainText(postalCode);
   }
 
-/*   async assertFirstNameInLastRow(firstName) {
-    //const lastRow = this.page.locator('tr.ng-scope').last();
-    await expect(this.tableRows.last()).toContainText(firstName);
-  }
-
-  async assertLastNameInLastRow(lastName) {
-    //const lastRow = this.page.locator('tr.ng-scope').last();
-    await expect(this.tableRows.last()).toContainText(lastName);
-  }
-
-  async assertPostCodeInLastRow(postalCode) {
-    //const lastRow = this.page.locator('tr.ng-scope').last();
-    await expect(this.tableRows.last()).toContainText(postalCode);
-  }  */
-
   async assertNoAccountNumberInLastRow() {
-    //const lastRow = this.page.locator('tr.ng-scope').last();
-    await expect(this.accountNumberInLastRow).toContainText('');
+    await expect(this.accountNumberInLastRow).toHaveText('');
   }
 
   async assertAccountNumberInLastRow() {
-    //const lastRow = this.page.locator('tr.ng-scope').last();
     await expect(this.accountNumberInLastRow).not.toHaveText('');
+  }
+
+  async acceptDialogWindowMessage() {
+    this.page.on('dialog', (dialog) => dialog.accept());
   }
 }

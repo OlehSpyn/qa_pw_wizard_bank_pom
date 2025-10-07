@@ -34,5 +34,8 @@ export class OpenAccountPage {
     await this.customer.selectOption({ label: customerLabel });
   }
 
+  async acceptDialogWindowMessage() {
+    this.page.on('dialog', (dialog) => dialog.accept());
+  }
 
 }

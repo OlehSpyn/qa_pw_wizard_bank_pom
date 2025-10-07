@@ -15,7 +15,8 @@ test.beforeEach(async ({ page }) => {
   lastName = await addCustomerPage.addFakeCustomerLastName();
   postalCode = await addCustomerPage.addFakeCustomerPostCode();
   await addCustomerPage.addCustomerButtonClick();
-  await page.reload();
+  await addCustomerPage.acceptDialogWindowMessage();
+  /* await page.reload(); */
 
   });
 
@@ -28,7 +29,8 @@ test('Assert manager can add new customer', async ({ page }) => {
   await openAccountPage.selectCustomerByName(firstName, lastName);
   await openAccountPage.selectCurrency('Dollar');
   await openAccountPage.clickProcessButton();
-  await page.reload();
+  await openAccountPage.acceptDialogWindowMessage();
+  /* await page.reload(); */
   await addCustomerPage.customersButtonClick();
   await addCustomerPage.assertAccountNumberInLastRow();
   

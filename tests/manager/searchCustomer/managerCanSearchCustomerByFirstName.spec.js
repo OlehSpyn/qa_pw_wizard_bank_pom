@@ -15,6 +15,7 @@ test.beforeEach(async ({ page }) => {
   lastName = await addCustomerPage.addFakeCustomerLastName();
   postalCode = await addCustomerPage.addFakeCustomerPostCode();
   await addCustomerPage.addCustomerButtonClick();
+  await addCustomerPage.acceptDialogWindowMessage();
 
 });
 

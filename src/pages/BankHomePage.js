@@ -26,8 +26,6 @@ export class BankHomePage {
     await this.bankManagerLoginButton.click();
   }
 
-  async 
-
   async assertAddCustomerButtonVisible() {
     await expect(this.addCustomerButton).toBeVisible();
   }
@@ -39,4 +37,5 @@ export class BankHomePage {
   async assertCustomersButtonVisible() {
     await expect(this.customersButton).toBeVisible();
   }
+  
 }

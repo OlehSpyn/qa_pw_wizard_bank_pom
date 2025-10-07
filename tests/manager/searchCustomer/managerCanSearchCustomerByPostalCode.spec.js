@@ -15,6 +15,7 @@ test.beforeEach(async ({ page }) => {
   lastName = await addCustomerPage.addFakeCustomerLastName();
   postalCode = await addCustomerPage.addFakeCustomerPostCode();
   await addCustomerPage.addCustomerButtonClick();
+  await addCustomerPage.acceptDialogWindowMessage();
 
 });
 
@@ -26,4 +27,5 @@ test('Assert manager can search customer by Postal Code', async ({ page }) => {
   await customersListPage.fillLastNameToSearchField(postalCode);
   await customersListPage.fakeCustomerRawIsPresent(firstName, lastName, postalCode);
   await customersListPage.assertOnlyOneRowIsPresent();
+
 });
