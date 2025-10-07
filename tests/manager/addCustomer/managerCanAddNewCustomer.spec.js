@@ -4,6 +4,7 @@ import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 test('Assert manager can add new customer', async ({ page }) => {
 
   const addCustomerPage = new AddCustomerPage(page);
+  
 
   await addCustomerPage.open();
   const firstName = await addCustomerPage.addFakeCustomerFirstName();
