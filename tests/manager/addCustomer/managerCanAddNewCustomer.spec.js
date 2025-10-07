@@ -11,7 +11,6 @@ test('Assert manager can add new customer', async ({ page }) => {
   const postalCode = await addCustomerPage.addFakeCustomerPostCode();
   await addCustomerPage.addCustomerButtonClick();
   await addCustomerPage.acceptDialogWindowMessage();
-  /* await page.reload(); */
   await addCustomerPage.customersButtonClick();
   await addCustomerPage.assertFakeCustomerInLastRow(firstName, lastName, postalCode);
   await addCustomerPage.assertNoAccountNumberInLastRow();
