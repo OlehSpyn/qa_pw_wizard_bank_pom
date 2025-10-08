@@ -30,7 +30,6 @@ test('Assert manager can add new customer', async ({ page }) => {
   await openAccountPage.selectCurrency('Dollar');
   await openAccountPage.clickProcessButton();
   await openAccountPage.acceptDialogWindowMessage();
-  /* await page.reload(); */
   await addCustomerPage.customersButtonClick();
   await addCustomerPage.assertAccountNumberInLastRow();
   
