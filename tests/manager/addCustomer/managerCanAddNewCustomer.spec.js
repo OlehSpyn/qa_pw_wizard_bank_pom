@@ -5,7 +5,6 @@ test('Assert manager can add new customer', async ({ page }) => {
 
   const addCustomerPage = new AddCustomerPage(page);
   
-
   await addCustomerPage.open();
   const firstName = await addCustomerPage.addFakeCustomerFirstName();
   const lastName = await addCustomerPage.addFakeCustomerLastName();
